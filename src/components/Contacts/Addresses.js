@@ -1,9 +1,12 @@
 import React from "react";
-import Parallax from "../../components/Parallax/Parallax.js";
+import $ from "jquery";
 
 import i from "../../assets/images/parallax-7.jpg";
 
 class Addresses extends React.Component {
+  componentDidMount() {
+    $(".parallax-container").parallax({});
+  }
   render() {
     return (
       <section
@@ -11,7 +14,13 @@ class Addresses extends React.Component {
         data-url={i}
         data-speed="0.4"
       >
-        <Parallax className="parallax-container" filter image={i}>
+        <section
+          className="parallax-container"
+          filter
+          image={i}
+          data-image-src={i}
+          data-parallax-img={i}
+        >
           <div className="container">
             <div className="row text-md-left flow-offset-1">
               <div className="col-md-4">
@@ -101,7 +110,7 @@ class Addresses extends React.Component {
               </div>
             </div>
           </div>
-        </Parallax>
+        </section>
       </section>
     );
   }
